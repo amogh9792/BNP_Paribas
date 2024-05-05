@@ -1,0 +1,13 @@
+* [33mdf6f892[m	HEAD[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m model train and prediction done
+* [33m86a8315[m	HEAD model train and evaluation complete..
+* [33ma68be90[m	HEAD Complete: Data Transformation
+* [33m6b1a6fc[m	HEAD feature encoding in data transformation done..
+* [33m719a1dd[m	HEAD feature encoding done..
+* [33ma3b9339[m	HEAD[33m ([m[1;31morigin/main[m[33m)[m Data Validation Complete..
+* [33mf0156af[m	HEAD handling missing values in data validation
+* [33md1c0821[m	HEAD Data Ingestion with processing and cleaning
+* [33m416099c[m	HEAD added mandatory column list and data types
+* [33m35dd6b7[m	HEAD complete cleaning the data
+* [33m99f3632[m	HEAD Data Ingestion Complete
+* [33m46609ae[m	HEAD added data ingestion constants and configurations
+* [33mc6e2d77[m	HEAD exception and logger added
