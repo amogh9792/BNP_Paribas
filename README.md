@@ -6,8 +6,7 @@ This project aims to accelerate the claims approval process for BNP Paribas Card
 ## Project Structure
 The project is structured as follows:
 
-- `data/`: Contains the dataset provided by BNP Paribas Cardif.
-- `src/`: Contains the source code for the project.
+- `source/`: Contains the source code for the project.
   - `data_ingestion.py`: Module for ingesting the dataset.
   - `data_validation.py`: Module for validating the dataset.
   - `data_transformation.py`: Module for transforming and preprocessing the dataset.
@@ -27,5 +26,5 @@ The project is structured as follows:
 To replicate the project or use the provided functionalities, follow these steps:
 1. Clone the repository.
 2. Install the required dependencies.
-3. Run the necessary modules/scripts in the `src/` directory.
+3. Run the necessary modules/scripts in the `source/` directory.
 4. Access the stored results and predictions in MongoDB.

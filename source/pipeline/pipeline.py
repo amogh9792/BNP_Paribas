@@ -34,9 +34,9 @@ class DataPipeline:
 
     def run_predict_pipeline(self):
         self.start_data_ingestion('predict')
-        self.start_data_validation('predict')
-        self.start_data_transformation('predict')
-        self.start_model_prediction()
+        # self.start_data_validation('predict')
+        # self.start_data_transformation('predict')
+        # self.start_model_prediction()
 
     def start_model_prediction(self):
         model_predict_obj = ModelPrediction(self.utility_config)

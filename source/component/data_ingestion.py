@@ -34,9 +34,13 @@ class DataIngestion:
                 feature_store_file_path = self.utility_config.train_feature_store_dir_path
                 feature_store_file_name = self.utility_config.train_feature_store_file_name
             else:
-                collection_name = self.utility_config.predict_collection_name
-                feature_store_file_path = self.utility_config.predict_di_feature_store_file_path
-                feature_store_file_name = self.utility_config.predict_di_feature_store_file_name
+                # collection_name = self.utility_config.predict_collection_name
+                # feature_store_file_path = self.utility_config.predict_di_feature_store_file_path
+                # feature_store_file_name = self.utility_config.predict_di_feature_store_file_name
+
+                data = pd.read_csv('BNP EDA/predict.csv')
+
+                return data
 
             client = MongoClient(self.utility_config.mongodb_url_key)
             database = client[self.utility_config.database_name]

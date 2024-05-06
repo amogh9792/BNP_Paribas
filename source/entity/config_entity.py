@@ -65,9 +65,9 @@ class PipelineConfig:
 
         self.predict_collection_name = constant.PREDICT_DI_COLLECTION_NAME
         self.predict_di_dir = os.path.join(self.artifact_dir, constant.PREDICT_PIPELINE_NAME, constant.DI_DIR_NAME)
-        self.predict_di_feature_store_file_name = os.path.join(self.predict_di_dir, constant.DI_FEATURE_STORE_DIR)
+        self.predict_di_feature_store_file_path = os.path.join(self.predict_di_dir, constant.DI_FEATURE_STORE_DIR)
+        self.predict_di_feature_store_file_name = constant.PREDICT_DATA_FILE_NAME
         self.predict_file = constant.PREDICT_FILE
-        self.predict_data_file_name = constant.PREDICT_DATA_FILE_NAME
 
         self.predict_file_path = os.path.join(self.predict_di_dir, constant.DI_INGESTED_DIR)
         self.predict_dv_file_path = os.path.join(self.artifact_dir, constant.PREDICT_PIPELINE_NAME, constant.DV_DIR_NAME)

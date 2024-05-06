@@ -17,7 +17,7 @@ train_pipeline_config_obj = PipelineConfig(global_timestamp)
 logging.info("Training Pipeline Config Created..")
 
 pipeline_obj = DataPipeline(global_timestamp)
-pipeline_obj.run_train_pipeline()
-# pipeline_obj.run_predict_pipeline()
+# pipeline_obj.run_train_pipeline()
+pipeline_obj.run_predict_pipeline()
 
 print('Done...')
