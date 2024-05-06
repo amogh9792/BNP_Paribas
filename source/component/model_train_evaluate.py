@@ -34,18 +34,17 @@ class ModelTrainEvaluate:
         self.model_evaluation_report = pd.DataFrame(columns = ["model_name", "accuracy", "precision", "recall", "f1", "class_report", "confu_matrix"])
 
     def hyper_parameter_tuning(self, x_train, y_train):
-
         try:
-            model = GradientBoostingClassifier()
+            model = SVC()
 
             param_grid = {
-                'loss': ['log_loss', 'exponential'],
-                'learning_rate': [0.01, 0.1, 0.5],
-                'n_estimators': [50, 100]
+                'C': [0.1, 1, 10],  # Regularization parameter
+                'kernel': ['linear', 'rbf'],  # Kernel type
+                'gamma': ['scale', 'auto']  # Kernel coefficient
             }
 
-            f1_scorer = make_scorer(f1_score, average = 'macro')
-            grid_search = GridSearchCV(estimator=model, param_grid=param_grid, cv = 5, scoring=f1_scorer)
+            f1_scorer = make_scorer(f1_score, average='macro')
+            grid_search = GridSearchCV(estimator=model, param_grid=param_grid, cv=5, scoring=f1_scorer)
 
             grid_search.fit(x_train, y_train)
 
@@ -56,7 +55,6 @@ class ModelTrainEvaluate:
 
         except BnpException as e:
             raise e
-
     def model_training(self, train_data, test_data):
         try:
             x_train = train_data.drop('target', axis = 1)
@@ -104,14 +102,14 @@ class ModelTrainEvaluate:
 
             best_params, best_score = self.hyper_parameter_tuning(x_train, y_train)
 
-            final_model = GradientBoostingClassifier(**best_params)
-            final_model_name = 'GradientBoostingClassifier'
+            final_model = SVC(**best_params)
+            final_model_name = 'SVC'
 
             final_model.fit(x_train, y_train)
 
             test_score = final_model.score(x_test, y_test)
 
-            logging.info(f"final model: GradientBoostingClassifier, test score: {test_score}")
+            logging.info(f"final model: SVC, test score: {test_score}")
 
             with open(f"{self.utility_config.final_model_path}/{final_model_name}.pkl", "wb") as f:
                 pickle.dump(final_model, f)

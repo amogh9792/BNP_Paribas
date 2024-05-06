@@ -178,7 +178,7 @@ class DataTransformation:
             test_data = self.min_max_scaler(test_data, key = 'test')
 
             train_data = self.oversample_smote(train_data)
-
+            test_data = test_data[: -6]
             export_csv_file(train_data, self.utility_config.train_file_name, self.utility_config.train_dt_train_file_path)
             export_csv_file(test_data, self.utility_config.test_file_name, self.utility_config.train_dt_test_file_path)
 
