@@ -1,4 +1,5 @@
 import logging
+import os
 import pickle
 from source.exception import BnpException
 from source.utility.utility import export_csv_file, import_csv_file
@@ -29,12 +30,14 @@ class ModelPrediction:
 
         logging.info("Start: Model Prediction")
 
+        feature_data = import_csv_file(self.utility_config.predict_di_feature_store_file_name, self.utility_config.predict_di_feature_store_file_path)
         predict_data = import_csv_file(self.utility_config.predict_file, self.utility_config.predict_dt_file_path)
-        predict_data = predict_data.drop('target', axis = 1)
+        # predict_data = predict_data.drop('target', axis = 1)
+        predict_data = predict_data.iloc[:len(feature_data)]
 
         model = self.load_model_pickle()
-
-        feature_data = import_csv_file(self.utility_config.predict_data_file_name, self.utility_config.predict_di_feature_store_file_path)
+        print(len(feature_data))
+        print(len(predict_data))
 
         feature_data['target'] = self.make_prediction(model, predict_data)
 

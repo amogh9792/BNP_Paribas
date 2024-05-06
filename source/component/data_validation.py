@@ -149,7 +149,7 @@ class DataValidation:
 
         if key == 'predict':
 
-            data = import_csv_file(self.utility_config.predict_file, self.utility_config.predict_file_path)
+            data = import_csv_file(self.utility_config.predict_file, self.utility_config.predict_di_feature_store_file_path)
             data = self.handle_missing_values(data, key)
             data = self.outlier_detection_handle(data, key = 'predict')
 

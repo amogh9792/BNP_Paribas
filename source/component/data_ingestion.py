@@ -190,7 +190,7 @@ class DataIngestion:
 
             if key == 'predict':
 
-                export_csv_file(data, self.utility_config.predict_file, self.utility_config.predict_file_path)
+                export_csv_file(data, self.utility_config.predict_file, self.utility_config.predict_di_feature_store_file_path)
 
             logging.info(">>>>>>>> COMPLETE DATA INGESTION <<<<<<<<<")
 

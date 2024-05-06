@@ -52,7 +52,7 @@ MODEL_EVALUATION_REPORT = "model_evaluation_report.csv"
 # Model Predict
 PREDICT_DI_COLLECTION_NAME = "Predict"
 PREDICT_PIPELINE_NAME = 'predict'
-PREDICT_DATA_FILE_NAME = 'predict_data.csv'
+PREDICT_DATA_FILE_NAME = 'predict.csv'
 PREDICT_FILE = 'predict.csv'
 FINAL_MODEL_FILE_NAME = 'SVC.pkl'
 MP_DIR_NAME = "model_prediction"
